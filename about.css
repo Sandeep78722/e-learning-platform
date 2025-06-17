@@ -1,0 +1,234 @@
+/* About Section Styles */
+#about {
+    background-color: #f4f4f9;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  #about h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  #about p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px;
+  }
+  
+  /* About Features Section */
+  .about-features {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  
+  .feature-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .feature-item h3 {
+    font-size: 22px;
+    color: #f39c12;
+    margin-bottom: 15px;
+  }
+  
+  .feature-item p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .feature-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Success Stats Section */
+  .success-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  .stat-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stat-card h3 {
+    font-size: 40px;
+    color: #f39c12;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .stat-card p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Testimonial Section */
+  .testimonial {
+    background-color: #fff;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .testimonial-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .testimonial-item {
+    max-width: 300px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .testimonial-item span {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #f39c12;
+  }
+  
+  /* Call to Action Section */
+  .cta {
+    background-color: #f39c12;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+  .cta h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .cta .btn-primary {
+    padding: 15px 30px;
+    background-color: white;
+    color: #f39c12;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid #f39c12;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta .btn-primary:hover {
+    background-color: #f1c40f;
+    color: white;
+  }
+  
+  /* Image Gallery Section */
+/* Container for the image grid */
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  /* Style for each image card */
+  .image-item {
+    width: calc(50% - 10px); /* Two items per row */
+    max-width: 350px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  /* Image container */
+  .image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Rotate effect on hover */
+  .image-item:hover img {
+    transform: rotate(5deg);
+  }
+  
+  /* Content below the image */
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .content h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .content p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Hover effect on the entire image card */
+  .image-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive layout adjustments */
+  @media (max-width: 768px) {
+    .image-item {
+      width: calc(50% - 10px); /* Two items per row */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .image-item {
+      width: 100%; /* One item per row */
+    }
+  }
+  

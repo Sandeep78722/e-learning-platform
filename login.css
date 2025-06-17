@@ -1,0 +1,103 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc; /* Light background color for better contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Login container */
+  .login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Maximum width for better readability */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #444;
+  }
+  
+  input {
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #4e73df;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.2);
+  }
+  
+  button {
+    background-color: #4e73df;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2e59d9;
+  }
+  
+  button:active {
+    background-color: #1d47b8;
+  }
+  
+  /* Error message styles */
+  .error {
+    color: #e74a3b;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    visibility: hidden; /* Hidden by default */
+  }
+  
+  .error.show {
+    visibility: visible;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    input, button {
+      font-size: 14px;
+    }
+  }
+  

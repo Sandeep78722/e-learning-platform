@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Dashboard</title>
+<link rel="stylesheet" href="./instructor.css"></head>
+<body>
+
+  <div class="dashboard">
+    <h1 id="welcome"></h1>
+
+    <!-- Add Course Form -->
+    <div class="add-course">
+      <h3>Add a New Course</h3>
+      <form id="courseForm">
+        <label for="courseTitle">Course Title</label>
+        <input type="text" id="courseTitle" required>
+
+        <label for="courseDescription">Course Description</label>
+        <textarea id="courseDescription" required></textarea>
+
+        <button type="submit">Add Course</button>
+      </form>
+    </div>
+
+    <div id="courseList">
+      <h3>Your Courses</h3>
+      <div id="courseContainer"></div>
+    </div>
+
+    <div id="assignmentsSection">
+      <h3>Assignments</h3>
+      <div id="assignmentsContainer"></div>
+    </div>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="instructor-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Add font-awesome for social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="./about.css">
+  <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <!-- Replace logo text with image -->
+    <div class="logo">
+      <img src="https://www.ballinamorecs.ie/wp-content/uploads/2014/07/elearning-logo.png" alt="E-Learning Logo" />
+    </div>
+  
+    <!-- Navigation Section -->
+    <nav>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#courses" class="nav-link">Courses</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Logout Button Section (Moved to the Right) -->
+    <div class="logout-button-container">
+      <button onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <!-- Home Section with Background Image -->
+  <section id="home" class="section home">
+    <div class="content">
+      <h3 id="welcomeMessage" class="animate__animated animate__slideInLeft">Welcome!</h3>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">Transform Your Future with Expert-Led Online Courses</p>
+      <p class="text-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque voluptatem, qui tempora adipisci quo minus! Aut quo voluptatibus blanditiis rem, quis enim fugit exercitationem nemo saepe animi quaerat mollitia! Fuga!</p>
+      
+      <!-- Buttons Section -->
+      <div class="button-container">
+        <button class="btn get-started">Get Started</button>
+        <button class="btn browse-courses">Browse Courses</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="section courses">
+    <h2>Available Courses</h2>
+    <div id="studentCourses"></div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="content-wrapper">
+      <h2>About Us</h2>
+      <p>Welcome to our platform! We are dedicated to offering unique and valuable learning experiences to individuals around the world. Our mission is to provide an interactive and immersive educational journey that can cater to various learning styles and needs. Explore the features and benefits that make our platform the ideal choice for you!</p>
+
+      <!-- Features Section -->
+      <div class="about-features">
+        <div class="feature-item">
+          <h3>Interactive Learning</h3>
+          <p>Engage with interactive tools and resources that enhance your learning experience.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Personalized Approach</h3>
+          <p>Tailor your learning path to your unique needs and preferences.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Expert Guidance</h3>
+          <p>Receive advice and insights from industry experts to accelerate your learning.</p>
+        </div>
+      </div>
+
+      <!-- Success Stats Section (Counter) -->
+      <section class="success-stats">
+        <div class="stat-card">
+          <h3 class="counter" data-target="1000">0+</h3>
+          <p>Successful Students</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="counter" data-target="150">0+</h3>
+          <p>Courses Offered</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="counter" data-target="50">0+</h3>
+          <p>Countries Reached</p>
+        </div>
+      </section>
+
+      <!-- Image Gallery Section -->
+      <div class="about-images">
+        <div class="image-item">
+          <img src="https://cdn.wallpapersafari.com/13/91/gIyO0t.jpg" alt="Learning Image 1">
+          <div class="content">
+            <h3>Transform Your Knowledge</h3>
+            <p>Interactive learning platforms to boost your skills, enabling you to gain practical knowledge at your own pace.</p>
+          </div>
+        </div>
+        <div class="image-item">
+          <img src="https://wallpaper.dog/large/20382880.jpg" alt="Learning Image 2">
+          <div class="content">
+            <h3>Collaborative Learning</h3>
+            <p>Connect with peers and learn together in a collaborative and engaging learning environment.</p>
+          </div>
+        </div>
+        <div class="image-item">
+          <img src="https://as2.ftcdn.net/v2/jpg/04/20/87/03/1000_F_420870355_bRJbQo0aj5L8ggot6CgNJRemkEqO1q0T.jpg" alt="Learning Image 3">
+          <div class="content">
+            <h3>Real-World Applications</h3>
+            <p>Putting knowledge into practice with hands-on experiences and real-world problem-solving scenarios.</p>
+          </div>
+        </div>
+        <div class="image-item">
+          <img src="https://wallpapercave.com/wp/wp9464100.jpg" alt="Learning Image 4">
+          <div class="content">
+            <h3>Global Reach</h3>
+            <p>Education that transcends borders, reaching learners from every corner of the globe.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Section -->
+      <div class="testimonial">
+        <h3>What Our Users Say</h3>
+        <div class="testimonial-content">
+          <div class="testimonial-item">
+            <p>"This platform has revolutionized the way I learn. The interactive modules are engaging, and I feel more confident about my knowledge!"</p>
+            <span>- John Doe, Student</span>
+          </div>
+          <div class="testimonial-item">
+            <p>"I love how personalized the learning experience is. I can learn at my own pace and choose the areas I want to focus on."</p>
+            <span>- Jane Smith, Professional</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="cta">
+        <h3>Ready to Start Your Learning Journey?</h3>
+        <p>Join thousands of satisfied learners. Get started today and discover the future of education!</p>
+        <a href="/signup" class="btn btn-primary">Sign Up Now</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+  
+      <!-- Google Map -->
+      <div class="google-map">
+        <h2>Our Location</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_EMBED_URL"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer Section -->
+  <footer id="footer" class="footer">
+    <div class="footer-container">
+      <!-- Company Info -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Company</h3>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Customer Support -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Support</h3>
+        <ul class="footer-links">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#help-center">Help Center</a></li>
+          <li><a href="#returns">Returns</a></li>
+          <li><a href="#shipping">Shipping</a></li>
+        </ul>
+      </div>
+  
+      <!-- Social Media -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Follow Us</h3>
+        <ul class="footer-social">
+          <li><a href="#" class="social-icon"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+      
+  
+      <!-- Newsletter Subscription -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Subscribe</h3>
+        <p>Stay updated with our latest news and offers.</p>
+        <form action="#" method="POST" class="newsletter-form">
+          <input type="email" name="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 E-Learning Platform. All rights reserved.</p>
+      <ul class="footer-legal">
+        <li><a href="#privacy-policy">Privacy Policy</a></li>
+        <li><a href="#terms-of-service">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  
+  <script src="student-dashboard.js"></script>
+</body>
+</html>
