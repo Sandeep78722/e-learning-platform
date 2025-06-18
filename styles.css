@@ -369,3 +369,171 @@ body {
     margin-top: 20px;
   }
 }
+
+
+/* SMALL DEVICES - Phones */
+@media (max-width: 576px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  header nav {
+    text-align: left;
+    width: 100%;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  header .logout-button-container {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  .home {
+    padding-left: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home .content {
+    padding-left: 0;
+    margin-top: 60px;
+    align-items: center;
+    text-align: center;
+  }
+
+  #home h3 {
+    font-size: 22px;
+  }
+
+  #home p {
+    font-size: 32px;
+  }
+
+  .home .text-p {
+    font-size: 16px;
+  }
+
+  .home .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-card {
+    padding: 15px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    min-width: 100%;
+  }
+
+  .footer-social {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-legal {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* MEDIUM DEVICES - Tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home .content {
+    margin-top: 80px;
+  }
+
+  #home h3 {
+    font-size: 26px;
+  }
+
+  #home p {
+    font-size: 38px;
+  }
+
+  .home .text-p {
+    font-size: 18px;
+  }
+
+  .home .button-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-social {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-legal {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* LARGE DEVICES - Small Desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  header nav ul li {
+    margin-right: 15px;
+  }
+
+  .home .content {
+    max-width: 80%;
+  }
+
+  .newsletter-form {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+  }
+
+  .footer-column {
+    min-width: 45%;
+    text-align: center;
+  }
+}
+
+/* EXTRA LARGE - WIDE SCREENS */
+@media (min-width: 1025px) {
+  .footer-column {
+    max-width: 25%;
+  }
+
+  .home .content {
+    max-width: 600px;
+  }
+}
