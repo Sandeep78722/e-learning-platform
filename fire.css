@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Container (Form Card) */
+.container {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  width: 520px;
+  padding: 2.5rem;
+  margin: 80px auto;
+  border-radius: 14px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+/* Title */
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Inputs */
+.input-group {
+  margin-bottom: 1.7rem;
+  position: relative;
+}
+
+.input-group label {
+  display: block;
+  color: #e0e0e0;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-group i {
+  position: absolute;
+  left: 10px;
+  top: 42px;
+  color: #ccc;
+}
+
+input {
+  width: 100%;
+  padding: 12px 12px 12px 36px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #fff;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+input:focus {
+  border-color: #fff;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Button */
+button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background: #00c6ff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 198, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  box-shadow: 0 10px 25px rgba(0, 198, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Social Icons */
+.icons {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.icons i {
+  font-size: 1.6rem;
+  margin: 0 12px;
+  padding: 0.6rem;
+  color: #00c6ff;
+  border: 2px solid #00c6ff;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.icons i:hover {
+  background-color: #ffffff22;
+  color: #fff;
+}
+
+/* Links */
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.links button {
+  background: none;
+  border: none;
+  color: #a6d8ff;
+  cursor: pointer;
+}
+
+.links button:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Message */
+.messageDiv {
+    text-transform: capitalize;
+  background-color: #b616b9;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  /* animation: fadeOut 6s forwards; */
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Header (Optional Styling) */
+.head {
+  background-color: #2a5298;
+  color: white;
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.image img {
+  height: 90px;
+  width: 90px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Navigation */
+.com {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.com:hover {
+  background-color: #ffffff33;
+  border-radius: 8px;
+}
+
+/* Dropdown */
+.courses {
+  position: relative;
+}
+
+.courses .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2a5298;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  min-width: 220px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.courses:hover .dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown a {
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  display: block;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown a:hover {
+  background: #0072ff;
+}

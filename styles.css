@@ -526,7 +526,7 @@ body {
     text-align: center;
   }
 }
-
+  
 /* EXTRA LARGE - WIDE SCREENS */
 @media (min-width: 1025px) {
   .footer-column {
