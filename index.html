@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
+  <title>Login & Sign Up</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="./login.css" />
 </head>
 <body>
   <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm">
+    <h2 id="formTitle">Login</h2>
+    <form id="authForm">
       <label for="username">Username:</label>
       <input type="text" id="username" required />
 
@@ -24,44 +24,31 @@
         <option value="instructor">Instructor</option>
       </select>
 
-      <button type="submit">Login</button>
+      <button type="submit" id="submitBtn">Login</button>
     </form>
+
     <p id="error-message" class="error"></p>
+    <p id="toggleMessage">
+      Don't have an account? <a href="#" id="toggleForm">Sign Up</a>
+    </p>
   </div>
+
   <button id="logout">Logout</button>
 
   <script src="login.js"></script>
 
-
-  <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-  import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-
-  // Initialize Firebase
-  const firebaseConfig = {
-    apiKey: "AIzaSyCS6TuuXBwBYL8Ppvu7uCgWjAP6z3uAmjw",
-    authDomain: "fire-base-9a3cc.firebaseapp.com",
-    projectId: "fire-base-9a3cc",
-    storageBucket: "fire-base-9a3cc.firebasestorage.app",
-    messagingSenderId: "215557462330",
-    appId: "1:215557462330:web:9236c3108aab2aad4a1803"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth();
-
+<script type="module">
   const logoutBtn = document.getElementById('logout');
-  logoutBtn?.addEventListener('click', () => {
-    localStorage.clear(); 
-    signOut(auth)
-      .then(() => {
-        console.log("Logged out successfully");
-        window.location.href = 'fire.html';
-      })
-      .catch((error) => {
-        console.error("Logout failed:", error);
-      });
-  });
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+      // Clear user data
+      localStorage.removeItem('loggedInUser'); // or localStorage.clear() if needed
+
+      // Redirect to login page
+      window.location.href = 'fire.html';
+    });
+  }
 </script>
 
 </body>

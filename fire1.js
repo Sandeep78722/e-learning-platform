@@ -1,107 +1,78 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyCS6TuuXBwBYL8Ppvu7uCgWjAP6z3uAmjw",
-    authDomain: "fire-base-9a3cc.firebaseapp.com",
-    projectId: "fire-base-9a3cc",
-    storageBucket: "fire-base-9a3cc.firebasestorage.app",
-    messagingSenderId: "215557462330",
-    appId: "1:215557462330:web:9236c3108aab2aad4a1803"
- };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-
-  function showMessage(message, divId) {
-    var messageDiv = document.getElementById(divId);
-    messageDiv.style.display = "block";
-    messageDiv.innerHTML = message;
-    messageDiv.style.opacity = 1;
-    setTimeout(function () {
-        messageDiv.style.opacity = 0;
-    }, 5000);
+function showMessage(message, divId, color = 'red') {
+  const messageDiv = document.getElementById(divId);
+  messageDiv.style.display = "block";
+  messageDiv.innerHTML = message;
+  messageDiv.style.color = color;
+  messageDiv.style.opacity = 1;
+  setTimeout(() => {
+    messageDiv.style.opacity = 0;
+  }, 5000);
 }
-const signUp = document.getElementById('submitSignUp');
-signUp.addEventListener('click', (event) => {
-    event.preventDefault();
-    const email = document.getElementById('rEmail').value;
-    const password = document.getElementById('rPassword').value;
-    const firstName = document.getElementById('fName').value;
-    const lastName = document.getElementById('lName').value;
 
-    const auth = getAuth();
-    const db = getFirestore();
+// === REGISTRATION ===
+document.getElementById('submitSignUp').addEventListener('click', function (e) {
+  e.preventDefault();
 
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            const userData = {
-                email: email,
-                firstName: firstName,
-                lastName: lastName,
-                password: password
-            };
-            showMessage('Account Created Successfully', 'signUpMessage');
-            const docRef = doc(db, "users", user.uid);
-            setDoc(docRef, userData)
-                .then(() => {
-                    window.location.href = 'index.html';
-                })
-                .catch((error) => {
-                    console.error("error writing document", error);
+  const firstName = document.getElementById('fName').value.trim();
+  const lastName = document.getElementById('lName').value.trim();
+  const email = document.getElementById('rEmail').value.trim();
+  const password = document.getElementById('rPassword').value;
 
-                });
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            if (errorCode == 'auth/email-already-in-use') {
-                showMessage('Email Address Already Exists !!!', 'signUpMessage');
-            }
-            else {
-                showMessage('unable to create User', 'signUpMessage');
-            }
-        })
+  if (!firstName || !lastName || !email || !password) {
+    showMessage("Please fill in all fields", 'signUpMessage');
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+
+  const userExists = users.some(user => user.email === email);
+  if (userExists) {
+    showMessage("Email already exists!", 'signUpMessage');
+    return;
+  }
+
+  users.push({ fullName: `${firstName} ${lastName}`, email, password });
+  localStorage.setItem('users', JSON.stringify(users));
+
+  showMessage("Account created successfully!", 'signUpMessage', 'green');
+
+  setTimeout(() => {
+    document.getElementById('signIn').style.display = "block";
+    document.getElementById('signup').style.display = "none";
+  }, 1000);
 });
 
-const signIn = document.getElementById('submitSignIn');
-signIn.addEventListener('click', (event) => {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const auth = getAuth();
+// === LOGIN (Only Email + Password) ===
+document.getElementById('submitSignIn').addEventListener('click', function (e) {
+  e.preventDefault();
 
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            showMessage('login is successful', 'signInMessage');
-            const user = userCredential.user;
-            localStorage.setItem('loggedInUserId', user.uid);
-            window.location.href = 'index.html';
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            if (errorCode === 'auth/invalid-credential') {
-                showMessage('Incorrect Email or Password', 'signInMessage');
-            }
-            else {
-                showMessage('Account does not Exist', 'signInMessage');
-            }
-        })
-})
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
 
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const user = users.find(user =>
+    user.email === email &&
+    user.password === password
+  );
 
+  if (user) {
+    showMessage("Login successful!", 'signInMessage', 'green');
+    localStorage.setItem('loggedInUser', JSON.stringify(user));
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1000);
+  } else {
+    showMessage("Invalid credentials!", 'signInMessage');
+  }
+});
 
-const signUpButton = document.getElementById('signUpButton');
-const signInButton = document.getElementById('signInButton');
-const signInForm = document.getElementById('signIn');
-const signUpForm = document.getElementById('signup');
+// === TOGGLE FORMS ===
+document.getElementById('signUpButton').addEventListener('click', () => {
+  document.getElementById('signIn').style.display = "none";
+  document.getElementById('signup').style.display = "block";
+});
 
-signUpButton.addEventListener('click', function () {
-    signInForm.style.display = "none";
-    signUpForm.style.display = "block";
-})
-signInButton.addEventListener('click', function () {
-    signInForm.style.display = "block";
-    signUpForm.style.display = "none";
-})
+document.getElementById('signInButton').addEventListener('click', () => {
+  document.getElementById('signIn').style.display = "block";
+  document.getElementById('signup').style.display = "none";
+});
